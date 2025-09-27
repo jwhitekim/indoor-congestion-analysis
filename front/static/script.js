@@ -1,4 +1,5 @@
 const clockElement = document.getElementById('clock');
+
 function updateClock() {
     const now = new Date();
     const year = now.getFullYear();
@@ -30,20 +31,3 @@ next.addEventListener('click', () => { index = Math.min(slides.length - 1, index
 
 window.addEventListener('resize', update);
 update();
-
-// 옆의 버튼 이벤트 입력을 감시 및 실행 //
-
-const menuList = document.querySelector('.menu ul');
-
-menuList.addEventListener('click', function(event) {
-    const clickedItem = event.target.closest('li');
-    if (!clickedItem) return;
-    const menuText = clickedItem.querySelector('span').textContent;
-    console.log(menuText);
-
-    if (menuText === '실시간 인구') {
-        alert('실시간 인구 정보를 표시합니다.');
-    } else if (menuText === '장소검색') {
-        alert('장소검색 기능을 실행합니다.');
-    }
-});
